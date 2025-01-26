@@ -46,7 +46,7 @@ guiY := 10
 Gui, +AlwaysOnTop +ToolWindow -Caption
 Gui, Margin, 10, 10
 Gui, Font, s10, Arial
-Gui, Add, Text, cWhite, Fendi's Gem Macro v0.4
+Gui, Add, Text, cWhite, Fendi's Gem Macro v0.7
 Gui, Add, Text, cWhite, F1: Start Macro
 Gui, Add, Text, cWhite, F2: Pause Macro
 Gui, Add, Text, cWhite, F3: Resize Roblox 
@@ -89,10 +89,13 @@ F1::
             Replay:="|<>*120$82.0000000000000000000000000000000000000000000000000k000000zk0000Dk000007zs0001X000000k1k0006400000301U000ME00000A060001V000000k0Bzbza4Dzy7U33ky7PrMFrjQn0AB3U707VA0Mq40kwA0Q0C5U11sM33UU0k0MQ06730A02731VVkEQAA0k0M0AC673Vk0U301U0ksMQS7U60A067z3VVksS0E0kw8Sw06301g3032kU1k0s606MA0A930707UM0NVU0laD0Q9n1sFa601yDjzky7xzwkk01UMDn207UnX3000000A800008M000000kU0001VU00000360000340000007s0000Dk2"
         
             if (ok:=FindText(X, Y, 935-150000, 151-150000, 935+150000, 151+150000, 0, 0, Replay)) {
-                MoveMouse, X, Y, "L"
+                Sleep, 65
                 Click 
+                Sleep, 65
                 Click
+                Sleep, 65
                 Click
+                Sleep, 65
                 SendWebHookFunc()
 
                 Sleep, 4000
@@ -270,6 +273,14 @@ leaveGame() {
         Click
         Sleep, 300
     }
+
+    Sleep, 5000
+
+    LobbyConfirm:="|<>*116$49.nzzVrzzwtywzljzyQyCTxXzzST7DzlzzjDXY20Ezrblm009Tvnwt62QDxtyMX1D7ywz0lUV3zSTkxmsVzjDzzzzzzrbzzzzzzvnzzzzzzxs0000000y0000000zzzzzzzzy" 
+        if (ok:=FindText(X, Y, 896-150000, 599-150000, 896+150000, 599+150000, 0, 0, LobbyConfirm)) 
+        {
+            LobbyStart()
+        }
 }
 
 F5::
